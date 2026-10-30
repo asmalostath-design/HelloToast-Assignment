@@ -1,0 +1,27 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color count_blue
+color count_green
+color white
+color zero_gray
+color zero_orange
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id button_count
+id button_toast
+id button_zero
+id main
+id text_display_count
+layout activity_main
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+string count
+string count_value
+string toast
+string zero
+style Base.Theme.HelloToast
+style Theme.HelloToast
+xml backup_rules
+xml data_extraction_rules

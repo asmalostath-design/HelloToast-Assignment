@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="count_blue">#2196F3</color>
+    <color name="count_green">#4CAF50</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="zero_gray">#808080</color>
+    <color name="zero_orange">#FF9800</color>
+    <string name="app_name">HelloToast</string>
+    <string name="count">Count</string>
+    <string name="count_value">0</string>
+    <string name="toast">Toast</string>
+    <string name="zero">Zero</string>
+    <style name="Base.Theme.HelloToast" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.HelloToast" parent="Base.Theme.HelloToast"/>
+</resources>

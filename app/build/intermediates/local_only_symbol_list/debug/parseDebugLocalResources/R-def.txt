@@ -12,7 +12,7 @@ id button_count
 id button_toast
 id button_zero
 id main
-id text_display_count
+id show_count
 layout activity_main
 mipmap ic_launcher
 mipmap ic_launcher_round

@@ -33,17 +33,17 @@ public final class ActivityMainBinding implements ViewBinding {
   public final ConstraintLayout main;
 
   @NonNull
-  public final TextView textDisplayCount;
+  public final TextView showCount;
 
   private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull Button buttonCount,
       @NonNull Button buttonToast, @NonNull Button buttonZero, @NonNull ConstraintLayout main,
-      @NonNull TextView textDisplayCount) {
+      @NonNull TextView showCount) {
     this.rootView = rootView;
     this.buttonCount = buttonCount;
     this.buttonToast = buttonToast;
     this.buttonZero = buttonZero;
     this.main = main;
-    this.textDisplayCount = textDisplayCount;
+    this.showCount = showCount;
   }
 
   @Override
@@ -93,14 +93,14 @@ public final class ActivityMainBinding implements ViewBinding {
 
       ConstraintLayout main = (ConstraintLayout) rootView;
 
-      id = R.id.text_display_count;
-      TextView textDisplayCount = ViewBindings.findChildViewById(rootView, id);
-      if (textDisplayCount == null) {
+      id = R.id.show_count;
+      TextView showCount = ViewBindings.findChildViewById(rootView, id);
+      if (showCount == null) {
         break missingId;
       }
 
       return new ActivityMainBinding((ConstraintLayout) rootView, buttonCount, buttonToast,
-          buttonZero, main, textDisplayCount);
+          buttonZero, main, showCount);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

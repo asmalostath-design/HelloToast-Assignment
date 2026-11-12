@@ -3516,6 +3516,7 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id show_count
 id sin
 id skipCollapsed
 id skipped
@@ -3569,7 +3570,6 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
-id text_display_count
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon

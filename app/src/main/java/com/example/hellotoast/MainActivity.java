@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        // استعادة قيمة العداد عند دوران الشاشة (دعم التعديل المتجاوب Responsive Design)
         if (savedInstanceState != null) {
             count = savedInstanceState.getInt(STATE_COUNT, 0);
         }
@@ -49,44 +50,45 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
     }
 
-    // يظهر رسالة Hello Toast عند ضغط زر Toast.
-    public void show_toast(View view) {
+    // [تعديل 1]: تم تغيير اسم الدالة إلى showToast
+    public void showToast(View view) {
         Toast.makeText(this, "Hello Toast", Toast.LENGTH_SHORT).show();
     }
 
-    // يزيد العدد واحدًا، ثم يلوّن Count حسب فردية/زوجية القيمة الجديدة.
-    public void increase_count(View view) {
+    // [تعديل 2]: تم تغيير اسم الدالة إلى showCount
+    public void showCount(View view) {
         count++;
         updateCountDisplay();
         updateButtonColors();
     }
 
-    // يصفر العدد ويعيد زر Zero إلى اللون الرمادي.
-    public void show_zero(View view) {
+    // [تعديل 3]:  اعتماد دالة showZero لتقوم بتصفير العداد وإعادة زر Zero إلى لونه الرمادي الافتراضي
+    public void showZero(View view) {
         count = 0;
         updateCountDisplay();
         updateButtonColors();
     }
 
     private void updateCountDisplay() {
-        binding.textDisplayCount.setText(String.valueOf(count));
+        binding.showCount.setText(String.valueOf(count));
     }
 
+    // [تعديل 5]: التحكم الديناميكي بالألوان حسب الشروط (الصفر رمادي، الأكبر من صفر نشط، والفردي/الزوجي لزر Count)
     private void updateButtonColors() {
         if (count == 0) {
             binding.buttonZero.setBackgroundColor(
-                    ContextCompat.getColor(this, R.color.zero_gray));
+                    ContextCompat.getColor(this, android.R.color.darker_gray));
             return;
         }
 
-        // عندما يكون العدد أكبر من صفر، يكون زر Zero نشطًا ولونه برتقاليًا.
+        // عندما يصبح العد أكبر من صفر، يصبح زر Zero نشطاً (لون مغاير للرمادي كـ البرتقالي مثلاً)
         binding.buttonZero.setBackgroundColor(
-                ContextCompat.getColor(this, R.color.zero_orange));
+                ContextCompat.getColor(this, android.R.color.holo_orange_dark));
 
-        // لون Count أخضر للعدد الفردي وأزرق للعدد الزوجي.
+        // تغيير لون زر Count ديناميكياً: أخضر للأعداد الفردية، وأزرق للأعداد الزوجية
         int countColor = (count % 2 == 1)
-                ? R.color.count_green
-                : R.color.count_blue;
+                ? android.R.color.holo_green_dark
+                : android.R.color.holo_blue_dark;
         binding.buttonCount.setBackgroundColor(
                 ContextCompat.getColor(this, countColor));
     }
